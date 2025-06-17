@@ -1,0 +1,6 @@
+@DuendeCanvasAPI_HostAddress = http://localhost:5255
+
+GET {{DuendeCanvasAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
