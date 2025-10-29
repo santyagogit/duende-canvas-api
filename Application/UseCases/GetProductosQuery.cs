@@ -1,5 +1,6 @@
 ﻿using DuendeCanvasAPI.Domain.Entities;
 using DuendeCanvasAPI.Domain.Interfaces;
+using DuendeCanvasAPI.Domain.DTOs;
 
 namespace DuendeCanvasAPI.Application.UseCases
 {
@@ -10,9 +11,15 @@ namespace DuendeCanvasAPI.Application.UseCases
         {
             _productoRepository = productoRepository;
         }
+        
         public async Task<IEnumerable<Producto>> ExecuteAsync()
         {
             return await _productoRepository.GetAllAsync();
+        }
+        
+        public async Task<IEnumerable<Producto>> ExecuteAsync(ProductoQueryParameters parameters)
+        {
+            return await _productoRepository.GetAllAsync(parameters);
         }
     }
 }
