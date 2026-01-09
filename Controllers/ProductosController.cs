@@ -20,8 +20,7 @@ namespace DuendeCanvasAPI.Controllers
         public async Task<ActionResult<List<Producto>>> Get(
             [FromQuery] DateTime? fecha = null,
             [FromQuery] char turno = 'M',
-            [FromQuery] char operacion = 'N',
-            [FromQuery] bool entrada = false)
+            [FromQuery] char operacion = 'N')
         {
             try
             {
@@ -30,7 +29,6 @@ namespace DuendeCanvasAPI.Controllers
                     Fecha = fecha,
                     Turno = turno,
                     Operacion = operacion,
-                    Entrada = entrada
                 };
 
                 var productos = await _getProductosQuery.ExecuteAsync(parameters);

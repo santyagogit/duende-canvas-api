@@ -65,11 +65,6 @@ namespace DuendeCanvasAPI.Infrastructure.Repositories
                         { 
                             Value = parameters.Operacion 
                         });
-                        
-                        command.Parameters.Add(new SqlParameter("@Entrada", SqlDbType.Bit) 
-                        { 
-                            Value = parameters.Entrada 
-                        });
 
                         await connection.OpenAsync();
                         using (var reader = await command.ExecuteReaderAsync())
