@@ -9,6 +9,14 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddSingleton<IProductoRepository>(new ProductoRepository(builder.Configuration));
 builder.Services.AddTransient<GetProductosQuery>();
 
+// Etiquetas services
+builder.Services.AddScoped<IEtiquetaRepository, EtiquetaRepository>();
+builder.Services.AddTransient<CreateEtiquetaCommand>();
+builder.Services.AddTransient<GetEtiquetaByIdQuery>();
+builder.Services.AddTransient<GetUltimasEtiquetasQuery>();
+builder.Services.AddTransient<VerificarNombreEtiquetaQuery>();
+builder.Services.AddTransient<UpdateEtiquetaCommand>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
